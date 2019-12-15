@@ -43,3 +43,11 @@
 --INSERT INTO OrderDetails ([OrderId], [SKU], [ProductName], 
 --                         [Description])
 --VALUES (405785882,'P703','Hammer','')
+
+1.)
+2.)SELECT Country, MAX([Ship Date]) FROM Sales
+Group By Country
+3.)UPDATE Sales SET [Item Type] = 'Grain Product'
+WHERE [Item Type] = 'Cereal'
+4.)DELETE FROM OrderDetails WHERE SKU = 'S111'
+5.)
