@@ -1,0 +1,45 @@
+--DQL
+--SELECT Country,SUM(Total_Profit) AS 'Profit' FROM [SalesDatabase].[dbo].[Sales]
+--WHERE Total_Profit < 500000
+--GROUP BY Country
+
+--SELECT Country, MIN(Total_Profit) FROM Sales
+--GROUP BY Country
+
+
+
+--SELECT SUM(Total_Profit) FROM [SalesDatabase].[dbo].[Sales]
+--WHERE Country = 'Philippines'
+--WHERE Ship_Date BETWEEN '2014-12-01' AND '2014-12-31'
+--WHERE Country = 'canada' 
+--AND Total_Revenue > 100000
+--WHERE Region LIKE '%ocean%'
+--WHERE Total_Cost < 100000
+--WHERE Country IN('canada','Turkey','Philippines')
+--ORDER BY Total_Cost ASC
+
+--DDL
+--CREATE DATABASE SampleDB
+--DROP DATABASE SampleDB
+
+--DML
+
+--UPDATE Sales SET Sales_Channel = 'Online'
+--WHERE Country = 'Philippines'
+
+--DELETE FROM Sales 
+--WHERE Country = 'Zimbabwe'
+
+--INSERT INTO OrderDetails ([OrderId], [SKU], [ProductName], 
+--                         [Description])
+--VALUES (405785882,'P700','Jaguar','Mobile Phone')
+--INSERT INTO OrderDetails ([OrderId], [SKU], [ProductName], 
+--                       [Description])
+--VALUES (405785882,'P701','Rolls Royce','Mobile Phone')
+--INSERT INTO OrderDetails ([OrderId], [SKU], [ProductName], 
+--                         [Description])
+--VALUES (405785882,'P702','Ferrari','Flash Drive')
+
+--INSERT INTO OrderDetails ([OrderId], [SKU], [ProductName], 
+--                         [Description])
+--VALUES (405785882,'P703','Hammer','')
