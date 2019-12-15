@@ -43,3 +43,24 @@
 --INSERT INTO OrderDetails ([OrderId], [SKU], [ProductName], 
 --                         [Description])
 --VALUES (405785882,'P703','Hammer','')
+
+---STORED PROCEDURE
+CREATE PROCEDURE [dbo].[SP_INSERT_SELECT_ORDER] 
+	-- Add the parameters for the stored procedure here
+	@OrderId INT,
+	@SKU Nchar(10),
+	@ProductName Nchar(10)
+AS
+ BEGIN TRAN T1;
+  INSERT INTO OrderDetails ([OrderId], [SKU], [ProductName])
+  VALUES (@OrderId,@SKU,@ProductName)
+
+  --
+  UPDATE OrderDetails SET Condition = 'NEW'
+  WHERE OrderId = @OrderId
+
+  --
+  SELECT * FROM OrderDetails
+  WHERE OrderId = @OrderId
+
+ COMMIT TRAN T1

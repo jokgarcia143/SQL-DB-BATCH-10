@@ -1,0 +1,41 @@
+1.) JOIN Sales and Order Details where country is 'Indonesia' AND
+    total_cost < 100000
+	Ans: SELECT * FROM Sales s JOIN OrderDetails o 
+		 ON s.Order_ID = o.Orderid
+		 WHERE s.Country = 'Indonesia'
+		 AND s.Total_Cost < 100000
+
+2.) GET the Latest Shippingdate in table sales 
+    (Aggregate Function)
+	Ans: SELECT MAX([Ship_Date]) FROM Sales
+
+3.) Update all 'Cereal' item_type to 'Grain Product'
+    in Sales Table
+	 Ans : UPDATE Sales SET [Item_Type] = 'Grain Product'
+			WHERE [Item_Type] = 'Cereal'
+	
+	
+4.) DELETE SKU 'S111' in OrderDetails
+	Ans : DELETE FROM OrderDetails WHERE SKU = 'S111'
+
+5.) Create Stored Procedure for Sales Table 
+    that will update 'philippines' country
+    to 'Mabuhay' and display all 'libya' 
+	countries after updating 
+	
+	ANS:
+	CREATE PROCEDURE SP_UPDATE_COUNTRY 
+	-- Add the parameters for the stored procedure here
+	@Country NVARCHAR(100)
+AS
+ BEGIN TRANSACTION Update_Country;
+  
+  UPDATE Sales SET Country = @Country
+  WHERE Country = 'Philippines'
+
+  SELECT * FROM Sales WHERE Country = 'Libya'
+
+ COMMIT TRANSACTION Update_Country
+GO
+
+     
