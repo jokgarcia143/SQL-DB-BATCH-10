@@ -43,3 +43,49 @@
 --INSERT INTO OrderDetails ([OrderId], [SKU], [ProductName], 
 --                         [Description])
 --VALUES (405785882,'P703','Hammer','')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.--SELECT * FROM Sales s LEFT OUTER JOIN OrderDetails o
+--ON s.Order_ID = o.OrderID
+--where country = 'Indonesia' AND Total_Cost < 100000
+
+
+2.--SELECT MAX(Ship_Date) FROM Sales
+
+
+3.--UPDATE Sales SET Item_Type = 'Grain Product'
+--WHERE Item_Type = 'cereal'
+
+--SELECT * FROM Sales
+--WHERE Item_Type = 'Grain Product'
+
+4.DELETE FROM OrderDetails 
+WHERE SKU = 'S111'
+
+
+SELECT * FROM OrderDetails
+WHERE SKU = 'S111'
+
+
+INSERT INTO OrderDetails ([OrderId], [SKU], [ProductName], [Description])
+VALUES (405785882,'S111','Jaguar','Mobile Phone')
+
