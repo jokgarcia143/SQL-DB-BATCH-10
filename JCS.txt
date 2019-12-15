@@ -44,6 +44,7 @@
 --                         [Description])
 --VALUES (405785882,'P703','Hammer','')
 
+<<<<<<< HEAD
 ---STORED PROCEDURE
 CREATE PROCEDURE [dbo].[SP_INSERT_SELECT_ORDER] 
 	-- Add the parameters for the stored procedure here
@@ -64,3 +65,26 @@ AS
   WHERE OrderId = @OrderId
 
  COMMIT TRAN T1
+=======
+-- 1.)
+select * from Sales s left join OrderDetails o
+on s.Order_ID = o.Order_ID
+where Country = 'Indonesia' and Total_Cost < 100000
+
+-- 2.)
+select MAX(Ship_Date) from Sales
+
+-- 3.)
+update Sales set Item_Type = 'Grain Product' where Item_Type = 'Cereal'
+
+-- 4.)
+delete from OrderDetails where SKU = 'S111'
+
+-- 5.)
+CREATE PROCEDURE SP_UPDATE_AND_SELECT
+AS
+BEGIN
+	UPDATE Sales set Country = 'Mabuhay' where Country = 'Philippines'
+    SELECT * from Sales where Country = 'Libya'
+END;
+>>>>>>> 6b2198aa3a54be1c1854ea124a556e872f704f94
