@@ -51,22 +51,13 @@ ACTIVITY:
 1. JOIN Sales and OD where country is Libya AND
 total_cost < 100000
 
---SELECT SUM(Total_Profit) FROM [SalesDatabase].[dbo].[Sales]
---WHERE Country = 'Philippines'
---WHERE Ship_Date BETWEEN '2014-12-01' AND '2014-12-31'
---WHERE Country = 'canada' 
---AND Total_Revenue > 100000
---WHERE Region LIKE '%ocean%'
---WHERE Total_Cost < 100000
---WHERE Country IN('canada','Turkey','Philippines')
---ORDER BY Total_Cost ASC
+
 
 
 2. GET the Latest Shippingdate in table sales
 (Aggregate Function)
 
-SELECT Country, MAX([Ship Date]) FROM Sales
-Group By Country
+
 
 
 3. Update all 'Cereal' item_type to 'Grain Product'
